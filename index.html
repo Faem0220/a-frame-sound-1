@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>sound-experiment-1</title>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <<a-scene background="color: #111111">
+            <!---Asset Management system-->
+            <a-assets>
+                <audio id="track1" src ="sound-assets/track1.mp3"></audio>
+                <audio id="track2" src ="sound-assets/track2.mp3"></audio>
+                <audio id="track3" src ="sound-assets/track3.mp3"></audio>
+                <audio id="track4" src ="sound-assets/track4.mp3"></audio>
+            </a-assets>
+
+            <!--Camera-->
+            <a-entity>
+                <a-camera>
+                    <a-cursor></a-cursor>
+                </a-camera>
+            </a-entity>
+
+                <!---Sources -->
+            <a-plane position="4.5 0 4.5" rotation="-90 0 0" width="2" height="2" color="#222222" shadow></a-plane>
+           
+            <a-cylinder position="1 0.75 1" radius="0.1" height="1.5" color="#350a4d" shadow 
+                        sound="src: #track1;
+                               autoplay:true;
+                               loop:true;
+                               volume:1;
+                               redDistance:4;
+                               rolloffFactor:4"></a-cylinder>
+            <a-plane position="1 0 1" rotation="-90 0 0" width="1" height="1" color="#222222" shadow></a-plane>
+
+            <a-cylinder position="8 0.75 8" radius="0.1" height="1.5" color="#0d012d" shadow
+                        sound="src: #track2;
+                                autoplay:true; 
+                                loop:true;
+                               volume:1;
+                               redDistance:4;
+                               rolloffFactor:4"></a-cylinder>
+            <a-plane position="8 0 8" rotation="-90 0 0" width="1" height="1" color="#222222" shadow></a-plane>
+
+            <a-cylinder position="8 0.75 1" radius="0.1" height="1.5" color="#1a2d01" shadow
+                        sound="src: #track3;
+                        autoplay:true;
+                        loop:true;
+                               volume:1;
+                               redDistance:4;
+                               rolloffFactor:4"></a-cylinder>
+            <a-plane position="8 0 1" rotation="-90 0 0" width="1" height="1" color="#222222" shadow></a-plane>
+
+            <a-cylinder position="1 0.75 8" radius="0.1" height="1.5" color="#2d1501" shadow
+                    sound="src: #track4;
+                    autoplay:true;
+                    loop:true;
+                               volume:1;
+                               redDistance:4;
+                               rolloffFactor:4"></a-cylinder>
+            <a-plane position="1 0 8" rotation="-90 0 0" width="1" height="1" color="#222222" shadow></a-plane>
+        </a-scene>
+        
+    </body>
+</html>
