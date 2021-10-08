@@ -8,11 +8,16 @@ AFRAME.registerComponent('test', {
           var sphereEl = document.createElement('a-cylinder');
           
           if(j < 0){
-            color += 111;
+            if (color <= 999){
+              color += 111;
+            }
             altura += 5;
             }
           else{
-            color-=111;
+            if(color >= 222){
+              color-=111;
+            }
+            
             altura -= 5;
           }
           sphereEl.setAttribute('position', {x: i*2, y: 0, z:j*2});

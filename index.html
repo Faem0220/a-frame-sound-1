@@ -9,15 +9,17 @@
   <body>
     <a-scene test>
       <a-assets>
-        <audio id="track1" src="https://upload.wikimedia.org/wikipedia/commons/7/77/65_BPM_Heart_Sound.ogg" preload="auto"></audio>
+        <audio id="track1" crossorigin="anonymous"src="https://upload.wikimedia.org/wikipedia/commons/7/77/65_BPM_Heart_Sound.ogg" preload="auto"></audio>
       </a-assets>
-      <a-sphere position="0 0 0" color="#222" scale="10 10 10" sound="src: #track1;
-                               autoplay:true;
+      <a-sphere position="0 0 0" color="#333" scale="10 10 10" sound="src: #track1;
+  
+                               autoplay:on;
                                loop:true;
-                               volume:10;
+                               volume:5;
                                redDistance:50;
-                               rolloffFactor:1" ></a-sphere>
-      <a-sphere position="0 0 0" color="#311" scale="2 2 2"></a-sphere>
+                               rolloffFactor:1" animation="property: position;to: 0 3 0 ; dur: 1000; easing: easeInOutSine; loop: true"></a-sphere>
+      <a-sphere position="0 0 0" color="#222" scale="2 2 2" animation="property: position; to: 0 2 0; dur: 500; easing: linear; loop: true"></a-sphere>
+      <a-sphere position="0 0 0" color="#111" scale="0.2 0.2 0.2" animation="property: position; to: 0 1 0; dur: 1000; easing: linear; loop: true"></a-sphere>
       
       <a-sky color="#111"></a-sky>
     </a-scene>
